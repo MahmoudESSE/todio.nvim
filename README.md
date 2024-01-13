@@ -11,8 +11,8 @@
 
 ## Requirements
 
-    - [Neovim-0.9+](https://github.com/neovim/neovim)
-    - [nui.nvim](https://github.com/MunifTanjim/nui.nvim)
+- [Neovim-0.9+](https://github.com/neovim/neovim)
+- [nui.nvim](https://github.com/MunifTanjim/nui.nvim)
 
 ## Installation
 
