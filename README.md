@@ -40,14 +40,17 @@
 
 <details>
     <summary>Default Settings</summary>
-    <!-- config:start -->
+
+<!-- config:start -->
+
     ```lua
     {
 
     }
 
     ```
-    <!-- config:start -->
+
+<!-- config:start -->
 
 </details>
 
