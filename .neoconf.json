@@ -1,0 +1,14 @@
+{
+  "neodev": {
+    "library": {
+      "plugins": [
+        "plenary.nvim",
+        "nvim-web-devicons",
+        "nui.nvim",
+        "dressing.nvim",
+        "sqlite.lua",
+        "lazy.nvim"
+      ]
+    }
+  }
+}
