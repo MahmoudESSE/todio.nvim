@@ -1,10 +1,18 @@
-# example-plugin.nvim
+# todio.nvim
 
-`example-plugin.nvim`
+`todio.nvim` a neovim plugin to help keep track of your todos.
 
 ## Features
 
+    - Add todo to list
+    - View todo list
+    - Finish todos
+    - Delete todos
+
 ## Requirements
+
+    - [Neovim-0.9+](https://github.com/neovim/neovim)
+    - [nui.nvim](https://github.com/MunifTanjim/nui.nvim)
 
 ## Installation
 
@@ -12,11 +20,15 @@
 
 ```lua
 {
-    "{USERNAME}/{EXAMPLE_PLUGIN}",
+    "MahmoudESSE/todio.nvim",
+    ---@type TodioConfig
     opts = {},
-    config = function()
-        require("example-plugin").setup()
-    end
+    config = function(opts)
+        require("todio").setup(opts)
+    end,
+    dependencies = {
+       "MunifTanjim/nui.nvim", 
+    },
 }
 ```
 
@@ -24,7 +36,7 @@
 
 ## Configuration
 
-**example-plugin** is fully configurable. Refer to the default setup:
+**todio.nvim** is fully configurable. Refer to the default setup:
 
 <details>
     <summary>Default Settings</summary>
@@ -42,18 +54,17 @@
 ## Usage
 
 ```lua
-require("example-plugin").func()
+require("todio").func()
 ```
 
 ## Command
 
 ```console
-EXAMPLEPLUGINFUNC
-EXAMPLEPLUGINHelp
+TodioHelp
 ```
 
 ## API
 
 ```lua
-require("example-plugin").help()
+require("todio").help()
 ```

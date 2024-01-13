@@ -49,7 +49,7 @@ jobs:
       - name: panvimdoc
         uses: kdheepak/panvimdoc@main
         with:
-          vimdoc: example-plugin.nvim
+          vimdoc: todio.nvim
           version: "Neovim >= 0.9.0"
           demojify: true
           treesitter: true
@@ -76,7 +76,7 @@ jobs:
         id: release
         with:
           release-type: simple
-          package-name: example-plugin.nvim
+          package-name: todio.nvim
           token: ${{ secrets.WORKFLOW_TOKEN }}
       - name: Checkout Repo
         uses: actions/checkout@v4
