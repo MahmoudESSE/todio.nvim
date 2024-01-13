@@ -4,10 +4,10 @@
 
 ## Features
 
-    - Add todo to list
-    - View todo list
-    - Finish todos
-    - Delete todos
+- Add todo to list
+- View todo list
+- Finish todos
+- Delete todos
 
 ## Requirements
 
