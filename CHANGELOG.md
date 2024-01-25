@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/MahmoudESSE/todio.nvim/compare/v0.1.0...v0.1.1) (2024-01-25)
+
+
+### Bug Fixes
+
+* no longer need to add 1 to index ([f2fad5d](https://github.com/MahmoudESSE/todio.nvim/commit/f2fad5d009fca4c700db00c97bc2de8a71db4ad2))
+
 ## [0.1.0](https://github.com/MahmoudESSE/todio.nvim/compare/v0.0.1...v0.1.0) (2024-01-25)
 
 
