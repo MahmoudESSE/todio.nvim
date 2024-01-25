@@ -135,7 +135,7 @@ EXAMPLE                                        *todio.nvim-todio.nvim-example*
 <
 
 
-C ~
+C EXAMPLE ~
 
 >c
     /// TODO: test for division by 0
@@ -146,7 +146,7 @@ C ~
 <
 
 
-LUA ~
+LUA EXAMPLE ~
 
 >lua
     -- TODO: test for division by 0
