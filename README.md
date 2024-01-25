@@ -101,12 +101,12 @@ require("todio.search").get_loclist()
 ```json
 {
     {
-        bufnr = 4,
-        col = 4,
-        lnum = 9,
-        text = "-- TODO: Example",
-        title = "Todo",
-        type = "T"
+        "bufnr": 4,
+        "col": 4,
+        "lnum": 9,
+        "text": "-- TODO: Example",
+        "title": "Todo",
+        "type": "T"
     }
 }
 ```
