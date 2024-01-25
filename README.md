@@ -111,7 +111,7 @@ require("todio.search").get_loclist()
 }
 ```
 
-### c
+### c Example
 
 ```c
 /// TODO: test for division by 0
@@ -121,7 +121,7 @@ int div(int x, int y) {
 }
 ```
 
-### lua
+### lua Example
 
 ```lua
 -- TODO: test for division by 0
