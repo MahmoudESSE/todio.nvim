@@ -1,5 +1,5 @@
-local open_qf = require("todio.utils").open_qf
-local todos = require("todio.utils").todos
+local open_qf = require("todio.search").open_qf
+local todos = require("todio.search").todos
 local M = {}
 
 ---@type TodioConfig
