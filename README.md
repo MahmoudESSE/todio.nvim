@@ -46,7 +46,7 @@ require("todio").todos()
 - open the current buffer's quick fix list with the todo
 
 ```lua
-require("todio").open_qf()
+require("todio").open_qflist()
 ```
 
 ## 🔭 Command
