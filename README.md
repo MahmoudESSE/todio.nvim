@@ -56,18 +56,35 @@ require("todio.utils").get_todos()
 ## 🤖 Todo
 
 - [ ] add support for multiple languages
+  - [x] lua
   - [ ] c
   - [ ] cpp
   - [ ] rust
   - [ ] python
   - [ ] js
   - [ ] ts
+- [x] open todo list in quick fix list
+- [ ] open todo list in location list
+- [ ] open todo list in float buffer
+
+## Example
+
+### c
 
 ```c
 /// TODO: test for division by 0
 /// BUG: change int to correct type
-int div(int a, int b) {
-    int res = a / b;
-    return sum;
+int div(int x, int y) {
+    return x / y;
 }
+```
+
+### lua
+
+```lua
+-- TODO: test for division by 0
+-- BUG: could throw divided by zero err
+local function div(lhs, rhs)
+    return lhs / rhs
+end
 ```
