@@ -29,7 +29,6 @@ local parse_todos = function()
     local lnum, col = node:range()
 
     table.insert(todolist, {
-      title = "Todo",
       bufnr = vim.api.nvim_get_current_buf(),
       text = text,
       lnum = lnum + 1,
@@ -78,7 +77,6 @@ local get_qflist = function()
 
   for _, v in ipairs(list) do
     table.insert(qflist, {
-      title = v.title,
       bufnr = vim.api.nvim_get_current_buf(),
       text = v.text,
       lnum = v.lnum + 1,
@@ -92,8 +90,36 @@ local get_qflist = function()
   return qflist
 end
 
+--- Construct a location list from the parsed `todos`
+---@return table<TodioLocList>
+local get_loclist = function()
+  local ok, list = pcall(parse_todos)
+  logger.info("got the location list? " .. util.get_if_bool(ok, "true", "false"))
+
+  if not ok then
+    return {}
+  end
+
+  ---@type table<TodioLocList>
+  local loclist = {}
+
+  for _, v in ipairs(list) do
+    table.insert(loclist, {
+      bufnr = vim.api.nvim_get_current_buf(),
+      text = v.text,
+      lnum = v.lnum + 1,
+      col = v.col + 1,
+      type = v.type,
+    })
+  end
+
+  logger.info(loclist)
+
+  return loclist
+end
+
 --- Open the current buffer quick fix list
-local open_qf = function()
+local open_qflist = function()
   local ok, qflist = pcall(get_qflist)
   logger.trace("got the quick fix list? " .. util.get_if_bool(ok, "true", "false"))
 
@@ -104,6 +130,21 @@ local open_qf = function()
   logger.info(qflist)
 
   vim.fn.setqflist(qflist)
+  vim.cmd.copen()
+end
+
+--- Open the current buffer loc list
+local open_loclist = function()
+  local ok, loclist = pcall(get_loclist)
+  logger.trace("got the loc list? " .. util.get_if_bool(ok, "true", "false"))
+
+  if not ok then
+    return
+  end
+
+  logger.info(loclist)
+
+  vim.fn.setloclist(0, loclist)
   vim.cmd.copen()
 end
 
@@ -124,7 +165,9 @@ end
 M.get_todos = get_todos
 M.parse_todos = parse_todos
 M.get_qflist = get_qflist
-M.open_qf = open_qf
+M.open_qflist = open_qflist
+M.get_loclist = get_loclist
+M.open_loclist = open_loclist
 M.todos = todos
 
 return M
