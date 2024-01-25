@@ -7,6 +7,7 @@ using tree sitter instead of regex.
 
 - Parse todos from file
 - List todos in a quick fix list
+- List todos in a location fix list
 
 ## 📑 Requirements
 
@@ -30,7 +31,9 @@ You can install `todio.nvim` using your favorite plugin manager:
         require("todio").setup(opts)
     end,
     dependencies = {
-       "MunifTanjim/nui.nvim",
+        "MunifTanjim/nui.nvim",
+        "nvim-lua/plenary.nvim",
+        "nvim-treesitter/nvim-treesitter"
     },
 }
 ```
@@ -49,9 +52,16 @@ require("todio").todos()
 require("todio").open_qflist()
 ```
 
+- open the current buffer's location list with the todo
+
+```lua
+require("todio").open_loclist()
+```
+
 ## 🔭 Command
 
-TodioQf
+TodioQfList
+TodioLocList
 TodioTodos
 
 ## 📡 API
@@ -74,29 +84,19 @@ require("todio.search").get_todos()
 require("todio.search").get_qflist()
 ```
 
+- get constructed location fix list
+
+```lua
+require("todio.search").get_loclist()
+```
+
 ## 📓 Logging
 
 - logs are written to `todio.log` inside neovim default cache `:echo stdpath('cache')`
 
-## 🤖 Todo
-
-- [ ] add support for multiple languages
-  - [x] lua
-  - [ ] c
-  - [ ] cpp
-  - [ ] rust
-  - [ ] python
-  - [ ] js
-  - [ ] ts
-- [x] open todo list in quick fix list
-- [ ] open todo list in location list
-- [ ] open todo list in float buffer
-
 ## Example
 
-### Todo
-
-example of todo object
+- example of todo object
 
 ```json
 {
@@ -130,3 +130,8 @@ local function div(lhs, rhs)
     return lhs / rhs
 end
 ```
+
+## Inspiration
+
+- [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)
+- [DevOnDuty](https://www.youtube.com/watch?v=PdaObkGazoU)
