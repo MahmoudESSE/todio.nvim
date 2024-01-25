@@ -31,7 +31,13 @@ vim.api.nvim_create_autocmd("VimEnter", {
   callback = function()
     vim.api.nvim_create_user_command("TodioTodos", function()
       vim.cmd([[
-          lua require("todio").todos(0,0,10)
+          lua require("todio").todos()
+      ]])
+    end, {})
+
+    vim.api.nvim_create_user_command("TodioQf", function()
+      vim.cmd([[
+          lua require("todio").open_qf()
       ]])
     end, {})
   end,

@@ -1,4 +1,4 @@
-local get_todos = require("todio.utils").get_todos
+local open_qf = require("todio.utils").open_qf
 local todos = require("todio.utils").todos
 local M = {}
 
@@ -18,7 +18,7 @@ local setup = function(opts)
   init(opts)
 end
 
-M.get_todos = get_todos
+M.open_qf = open_qf
 M.todos = todos
 M.setup = setup
 
