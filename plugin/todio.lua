@@ -22,7 +22,7 @@ if vim.g.loaded_todio_plugin == 1 then
 end
 
 if vim.fn.has("nvim-0.9.0") ~= 1 then
-  vim.api.nvim_err_writeln("Todio.NVIM requires at least neovim-0.9.0")
+  vim.api.nvim_err_writeln("todio.nvim requires at least neovim-0.9.0")
 end
 
 local TodioLoad = vim.api.nvim_create_augroup("TodioLoad", { clear = true })
@@ -35,15 +35,21 @@ vim.api.nvim_create_autocmd("VimEnter", {
       ]])
     end, {})
 
-    vim.api.nvim_create_user_command("TodioQf", function()
+    vim.api.nvim_create_user_command("TodioQfList", function()
       vim.cmd([[
-          lua require("todio").open_qf()
+          lua require("todio").open_qflist()
+      ]])
+    end, {})
+
+    vim.api.nvim_create_user_command("TodioLocList", function()
+      vim.cmd([[
+          lua require("todio").open_loclist()
       ]])
     end, {})
   end,
   group = TodioLoad,
   pattern = "*",
-  desc = "Load Todio.NVIM utils to rtplugin",
+  desc = "Load todio.nvim utils to rtplugin",
 })
 
 vim.g.loaded_todio_plugin = 1
