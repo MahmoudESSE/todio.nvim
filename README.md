@@ -4,15 +4,14 @@
 
 ## ✨ Features
 
-- Add todo to list
-- View todo list
-- Finish todos
-- Delete todos
+- Parse todos from file
+- List todos in a quick fix list
 
 ## 📑 Requirements
 
 - [Neovim-0.9+](https://github.com/neovim/neovim)
 - [nui.nvim](https://github.com/MunifTanjim/nui.nvim)
+- [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 
 ## 📦 Installation
 
@@ -20,7 +19,7 @@ You can install `todio.nvim` using your favorite plugin manager
 
 - [lazy.nvim](https://github.com/folke/lazy.nvim)
 
-``` lua
+```lua
 {
     "MahmoudESSE/todio.nvim",
     ---@type TodioConfig
@@ -38,22 +37,8 @@ You can install `todio.nvim` using your favorite plugin manager
 
 - list your todos
 
-``` lua
-require("todio").list()
-```
-
-- add a todo passing a title to it
-
-``` lua
---- @param title string
-require("todio").add(title)
-```
-
-- finish a todo with `id`  being the id of the todo
-
-``` lua
---- @param id number
-require("todio").finish(id)
+```lua
+require("todio").todos()
 ```
 
 ## 🔭 Command
@@ -62,20 +47,26 @@ TodioHelp
 
 ## 📡 API
 
-pull up a window with `help.txt`
+get parsed todos
 
-``` lua
-require("todio").help()
+```lua
+require("todio.utils").get_todos()
 ```
 
 ## 🤖 Todo
 
-- [ ] add support for lsp to insert a todo inside you file in a comment
+- [ ] add support for multiple languages
+  - [ ] c
+  - [ ] cpp
+  - [ ] rust
+  - [ ] python
+  - [ ] js
+  - [ ] ts
 
-``` c
+```c
 /// TODO: test for division by 0
-    /// BUG: change int to correct type
-    int div(int a, int b) {
+/// BUG: change int to correct type
+int div(int a, int b) {
     int res = a / b;
     return sum;
 }
