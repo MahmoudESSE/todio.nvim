@@ -1,9 +1,18 @@
 {
   "neodev": {
     "library": {
-      "plugins": [
-        "nui.nvim"
-      ]
+      "enabled": true,
+      "plugins": ["plenary.nvim", "nui.nvim", "nvim-treesitter"]
     }
+  },
+  "neoconf": {
+    "plugins": {
+      "lua_ls": {
+        "enabled": true
+      }
+    }
+  },
+  "lspconfig": {
+    "lua_ls": {}
   }
 }

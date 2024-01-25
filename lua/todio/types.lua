@@ -1,3 +1,12 @@
 --- @meta
-
+---
 ---@class TodioConfig
+---@field position?  "bottom" | "top" | "left" | "right" position of the loclist can be "bottom" | "top" | "left" | "right"
+--
+---@class TodioGetTodos
+-- number of buffer to parse for symbols defaults to `0`
+---@field bufnr integer
+-- start position of the parser
+---@field first integer
+-- last position of the parser
+---@field last integer

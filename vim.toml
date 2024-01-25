@@ -1,8 +1,11 @@
 [selene]
-base = "lua54"
+base = "lua52"
 name = "vim"
 
 [vim]
+any = true
+
+[jit]
 any = true
 
 [[describe.args]]

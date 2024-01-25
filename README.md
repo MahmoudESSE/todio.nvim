@@ -1,24 +1,26 @@
-# todio.nvim
+# 💫 todio.nvim
 
 `todio.nvim` a neovim plugin to help keep track of your todos.
 
-## Features
+## ✨ Features
 
 - Add todo to list
 - View todo list
 - Finish todos
 - Delete todos
 
-## Requirements
+## 📑 Requirements
 
 - [Neovim-0.9+](https://github.com/neovim/neovim)
 - [nui.nvim](https://github.com/MunifTanjim/nui.nvim)
 
-## Installation
+## 📦 Installation
 
-<!-- setup:start -->
+You can install `todio.nvim` using your favorite plugin manager
 
-```lua
+- [lazy.nvim](https://github.com/folke/lazy.nvim)
+
+``` lua
 {
     "MahmoudESSE/todio.nvim",
     ---@type TodioConfig
@@ -27,47 +29,54 @@
         require("todio").setup(opts)
     end,
     dependencies = {
-       "MunifTanjim/nui.nvim", 
+       "MunifTanjim/nui.nvim",
     },
 }
 ```
 
-<!-- setup:end -->
+## 🚀 Usage
 
-## Configuration
+- list your todos
 
-**todio.nvim** is fully configurable. Refer to the default setup:
-
-<details>
-    <summary>Default Settings</summary>
-
-<!-- config:start -->
-
-    ```lua
-    {
-
-    }
-
-    ```
-
-<!-- config:start -->
-
-</details>
-
-## Usage
-
-```lua
-require("todio").func()
+``` lua
+require("todio").list()
 ```
 
-## Command
+- add a todo passing a title to it
 
-```console
+``` lua
+--- @param title string
+require("todio").add(title)
+```
+
+- finish a todo with `id`  being the id of the todo
+
+``` lua
+--- @param id number
+require("todio").finish(id)
+```
+
+## 🔭 Command
+
 TodioHelp
+
+## 📡 API
+
+pull up a window with `help.txt`
+
+``` lua
+require("todio").help()
 ```
 
-## API
+## 🤖 Todo
 
-```lua
-require("todio").help()
+- [ ] add support for lsp to insert a todo inside you file in a comment
+
+``` c
+/// TODO: test for division by 0
+    /// BUG: change int to correct type
+    int div(int a, int b) {
+    int res = a / b;
+    return sum;
+}
 ```
