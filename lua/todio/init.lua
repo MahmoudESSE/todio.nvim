@@ -1,5 +1,6 @@
-local open_qf = require("todio.utils").open_qf
-local todos = require("todio.utils").todos
+local open_qflist = require("todio.search").open_qflist
+local open_loclist = require("todio.search").open_loclist
+local todos = require("todio.search").todos
 local M = {}
 
 ---@type TodioConfig
@@ -18,8 +19,9 @@ local setup = function(opts)
   init(opts)
 end
 
-M.open_qf = open_qf
-M.todos = todos
 M.setup = setup
+M.todos = todos
+M.open_qflist = open_qflist
+M.open_loclist = open_loclist
 
 return M

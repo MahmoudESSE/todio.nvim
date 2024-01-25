@@ -23,3 +23,10 @@
 ---@field lnum integer
 ---@field col integer
 ---@field type "T" | "F" | "E" | "W" | "R"
+--
+---@class TodioLocList
+---@field bufnr integer
+---@field text string
+---@field lnum integer
+---@field col integer
+---@field type "T" | "F" | "E" | "W" | "R"
