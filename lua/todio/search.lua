@@ -31,8 +31,8 @@ local parse_todos = function()
     table.insert(todolist, {
       bufnr = vim.api.nvim_get_current_buf(),
       text = text,
-      lnum = lnum + 1,
-      col = col + 1,
+      lnum = lnum,
+      col = col,
       type = "T",
     })
   end
