@@ -145,7 +145,7 @@ local open_loclist = function()
   logger.info(loclist)
 
   vim.fn.setloclist(0, loclist)
-  vim.cmd.copen()
+  vim.cmd.lopen()
 end
 
 --- Print the todos to the console
